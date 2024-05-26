@@ -81,4 +81,13 @@ function animateTree() {
 }
 
 function toggleMusic() {
-    const music = document.getElementBy
+    const music = document.getElementById('bg-music');
+    const controlButton = document.getElementById('music-control');
+    if (music.paused) {
+        music.play();
+        controlButton.innerText = '暂停音乐';
+    } else {
+        music.pause();
+        controlButton.innerText = '播放音乐';
+    }
+}
