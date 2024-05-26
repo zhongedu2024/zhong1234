@@ -50,37 +50,25 @@ function growTree() {
 }
 
 function animateTree() {
-    const trunk = document.getElementById('trunk');
-    const branch1 = document.getElementById('branch1');
-    const branch2 = document.getElementById('branch2');
-    const leaf1 = document.getElementById('leaf1');
-    const leaf2 = document.getElementById('leaf2');
-    const flower = document.getElementById('flower');
+    anime({
+        targets: '#trunk, #branch1, #branch2',
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: 'easeInOutSine',
+        duration: 1000,
+        delay: function(el, i) { return i * 250 },
+        direction: 'alternate',
+        loop: false
+    });
 
-    trunk.setAttribute('stroke-dasharray', trunk.getTotalLength());
-    trunk.setAttribute('stroke-dashoffset', trunk.getTotalLength());
-    trunk.style.animation = 'draw 2s forwards';
-
-    branch1.setAttribute('stroke-dasharray', branch1.getTotalLength());
-    branch1.setAttribute('stroke-dashoffset', branch1.getTotalLength());
-    branch1.style.animation = 'draw 2s forwards 2s';
-
-    branch2.setAttribute('stroke-dasharray', branch2.getTotalLength());
-    branch2.setAttribute('stroke-dashoffset', branch2.getTotalLength());
-    branch2.style.animation = 'draw 2s forwards 2s';
-
-    leaf1.style.animation = 'grow 1s forwards 4s';
-    leaf2.style.animation = 'grow 1s forwards 4s';
-    flower.style.animation = 'bloom 1s forwards 5s';
-
-    // 添加交互效果
-    leaf1.addEventListener('mouseenter', () => leaf1.setAttribute('fill', 'lightgreen'));
-    leaf1.addEventListener('mouseleave', () => leaf1.setAttribute('fill', 'green'));
-
-    leaf2.addEventListener('mouseenter', () => leaf2.setAttribute('fill', 'lightgreen'));
-    leaf2.addEventListener('mouseleave', () => leaf2.setAttribute('fill', 'green'));
-
-    flower.addEventListener('click', () => flower.setAttribute('fill', 'pink'));
+    anime({
+        targets: '#leaf1, #leaf2, #flower',
+        r: [0, 3],
+        easing: 'easeInOutQuad',
+        duration: 1000,
+        delay: 1500,
+        direction: 'alternate',
+        loop: false
+    });
 }
 
 function toggleMusic() {
@@ -93,4 +81,12 @@ function toggleMusic() {
         music.pause();
         controlButton.innerText = '播放音乐';
     }
+}
+
+function showTips() {
+    document.getElementById('tips-modal').style.display = 'block';
+}
+
+function closeTips() {
+    document.getElementById('tips-modal').style.display = 'none';
 }
