@@ -1,6 +1,9 @@
 particlesJS.load('particles-js', 'particles.json', function() {
     console.log('particles.js loaded - callback');
-    document.getElementById('bg-music').play();
+    const music = document.getElementById('bg-music');
+    music.play().catch(error => {
+        console.log('Music playback was prevented');
+    });
 });
 
 let messages = [
