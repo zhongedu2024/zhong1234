@@ -11,7 +11,7 @@
     <div class="content">
         <h1>致欣欣</h1>
         <p id="message">从见到你的那一刻起，我的心中便充满了爱意。愿我们的未来一起度过每一个美好的时光。</p>
-        <button onclick="showMore()">爱你</button>
+        <button onclick="showMore()">点击查看更多</button>
         <div id="animation">
             <svg id="tree" viewBox="0 0 100 100">
                 <!-- 这里将是树的SVG动画 -->
@@ -20,8 +20,26 @@
         <div id="timer"></div>
         <button id="music-control" onclick="toggleMusic()">暂停音乐</button>
         <audio id="bg-music" src="https://m3ws.kugou.com/kgmixsong/h75c567.html" loop></audio>
+        <div class="nav-buttons">
+            <button onclick="window.location.href='https://www.msn.cn/zh-cn/weather/forecast/in-%E5%9B%9B%E5%B7%9D%E7%9C%81,%E6%88%90%E9%83%BD%E5%B8%82?ocid=ansmsnweather&loc=eyJsIjoi6Z2S576K5Yy6IiwiciI6IuWbm%2BW3neecgSIsInIyIjoi5oiQ6YO95biCIiwiYyI6IuS4reWNjuS6uuawkeWFseWSjOWbvSIsImkiOiJDTiIsImciOiJ6aC1jbiIsIngiOiIxMDQuMDYyIiwieSI6IjMwLjY3NSJ9&weadegreetype=C'">今日天气</button>
+            <button onclick="showTips()">姨妈小贴士</button>
+        </div>
+    </div>
+    <div id="tips-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeTips()">&times;</span>
+            <h2>姨妈小贴士</h2>
+            <ul>
+                <li>饮食建议：多吃富含铁和镁的食物，避免咖啡因和高糖食物。</li>
+                <li>运动建议：轻度有氧运动和瑜伽有助于缓解经期不适。</li>
+                <li>舒缓疼痛：使用热水袋或热毛巾敷在腹部，进行温水泡脚。</li>
+                <li>保持情绪稳定：通过听音乐、看电影等方式放松自己。</li>
+                <li>经期注意事项：保持个人卫生，勤换卫生巾，避免过度劳累。</li>
+            </ul>
+        </div>
     </div>
     <script src="particles.js"></script>
+    <script src="anime.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
