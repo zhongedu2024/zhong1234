@@ -7,20 +7,21 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="particle-container">
-        <div class="content">
-            <h1>欣欣，我喜欢你！</h1>
-            <p>从第一次见面开始，你的笑容便深深地印在我的心中。</p>
-            <p>你的温柔，你的善良，你的聪明，让我无法自拔地爱上了你。</p>
-            <p>希望我们能一直走下去，一起面对未来的每一个挑战。</p>
-            <p>无论未来有多么艰难，我都愿意陪你一起走过。</p>
-            <p>你是我生命中最重要的人，愿意和我共度此生吗？</p>
-            <p>爱你的每一刻都是幸福的，我想和你一起创造更多美好的回忆。</p>
-            <p>从今以后，让我们携手并肩，走向属于我们的美好未来。</p>
+    <div id="particles-js"></div>
+    <div class="content">
+        <h1>致欣欣</h1>
+        <p id="message">从见到你的那一刻起，我的心中便充满了爱意。愿我们的未来一起度过每一个美好的时光。</p>
+        <button onclick="showMore()">点击查看更多</button>
+        <div id="animation">
+            <svg id="tree" viewBox="0 0 100 100">
+                <!-- 这里将是树的SVG动画 -->
+            </svg>
         </div>
+        <div id="timer"></div>
+        <button id="music-control" onclick="toggleMusic()">暂停音乐</button>
+        <audio id="bg-music" src="romantic-music.mp3" loop></audio>
     </div>
     <script src="particles.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
-
