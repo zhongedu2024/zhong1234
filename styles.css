@@ -23,6 +23,7 @@ body, html {
     z-index: 1;
     text-align: center;
     color: white;
+    max-width: 90%;
 }
 
 h1 {
@@ -101,5 +102,35 @@ audio {
     }
     to {
         r: 2;
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    button {
+        font-size: 0.8em;
+        padding: 8px 16px;
+    }
+
+    #tree {
+        width: 150px;
+        height: 150px;
+    }
+
+    #timer {
+        font-size: 1em;
+    }
+
+    #music-control {
+        font-size: 0.8em;
+        padding: 8px 16px;
     }
 }
