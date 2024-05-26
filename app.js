@@ -1,11 +1,3 @@
-particlesJS.load('particles-js', 'particles.json', function() {
-    console.log('particles.js loaded - callback');
-    const music = document.getElementById('bg-music');
-    music.play().catch(error => {
-        console.log('Music playback was prevented');
-    });
-});
-
 let messages = [
     "从见到你的那一刻起，我的心中便充满了爱意。你的一笑一颦，都是我心中的阳光。愿我们的未来充满幸福与美好，携手共度每一个美妙的瞬间。",
     "欣欣，每次看到你，我的心都会跳动得更加激烈。你的微笑是我最大的动力。",
