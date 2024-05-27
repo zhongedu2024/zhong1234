@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     VANTA.WAVES({
         el: "#vanta-bg",
-        color: 0xff7e5f,
+        color: 0x33334d,
         shininess: 50,
         waveHeight: 20,
         waveSpeed: 1.5,
