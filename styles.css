@@ -161,4 +161,102 @@ button:hover {
     background-color: white;
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes textAnimation {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.1);
+    }
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes grow {
+    from {
+        r: 0;
+    }
+    to {
+        r: 3;
+    }
+}
+
+@keyframes bloom {
+    from {
+        r: 0;
+    }
+    to {
+        r: 2;
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    button {
+        font-size: 0.8em;
+        padding: 8px 16px;
+    }
+
+    #tree {
+        width: 150px;
+        height: 150px;
+    }
+
+    #timer {
+        font-size: 1em;
+    }
+
+    #music-control {
+        font-size: 0.8em;
+        padding: 8px 16px;
+    }
+
+    .nav-buttons button {
+        font-size: 0.8em;
+        padding: 8px 16px;
+    }
+}
