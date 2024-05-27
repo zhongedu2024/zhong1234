@@ -3,14 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>表白欣欣</title>
+    <title>欣欣要开心啊</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js"></script>
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/formik/dist/formik.umd.production.min.js"></script>
 </head>
 <body>
+    <div id="vanta-bg"></div>
     <div class="content">
-        <h1 id="title">致欣欣</h1>
-        <p id="message">从见到你的那一刻起，我的心中便充满了爱意。你的一笑一颦，都是我心中的阳光。愿我们的未来充满幸福与美好，携手共度每一个美妙的瞬间。</p>
-        <button onclick="showMore()">点击查看更多</button>
+        <h1 id="title" class="animate__animated animate__fadeInDown">致欣欣</h1>
+        <p id="message"></p>
+        <button class="hvr-bounce-to-right" onclick="showMore()">点击查看更多</button>
         <div id="animation">
             <svg id="tree" viewBox="0 0 100 100">
                 <!-- 这里将是树的SVG动画 -->
@@ -20,9 +31,12 @@
         <button id="music-control" onclick="toggleMusic()">暂停音乐</button>
         <audio id="bg-music" src="https://m3ws.kugou.com/kgmixsong/h75c567.html" loop></audio>
         <div class="nav-buttons">
-            <button onclick="window.location.href='https://m.weather.com.cn/mweather15d/101270117.shtml'">今日天气</button>
-            <button onclick="showTips()">姨妈小贴士</button>
+            <button class="hvr-bounce-to-right" onclick="window.location.href='https://m.weather.com.cn/mweather15d/101270117.shtml'">今日天气</button>
+            <button class="hvr-bounce-to-right" onclick="showTips()">姨妈小贴士</button>
+            <button class="hvr-bounce-to-right" onclick="showDiary()">写日记</button>
+            <button class="hvr-bounce-to-right" onclick="showCure()">失眠治愈</button>
         </div>
+        <div id="root"></div>
     </div>
     <div id="tips-modal" class="modal">
         <div class="modal-content">
@@ -37,7 +51,25 @@
             </ul>
         </div>
     </div>
-    <script src="anime.min.js"></script>
+    <div id="diary-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDiary()">&times;</span>
+            <h2>写日记</h2>
+            <div id="diary-header">
+                <span id="diary-date"></span>
+                <span id="diary-weather"></span>
+            </div>
+            <textarea id="diary-editor"></textarea>
+            <button onclick="saveDiary()">保存日记</button>
+        </div>
+    </div>
+    <div id="cure-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCure()">&times;</span>
+            <h2>失眠治愈</h2>
+            <iframe src="https://m.niucodata.com/cat/cat.php" style="width:100%; height:400px;"></iframe>
+        </div>
+    </div>
     <script src="app.js"></script>
 </body>
 </html>
